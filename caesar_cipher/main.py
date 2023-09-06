@@ -24,19 +24,19 @@ while 1:
 
     match num:
         case "1":
-            key_1 = valid_input()
+            key_1 = valid_key_input()
 
         case "2":
-            key_2 = input("Enter your key (Should be a word): ")
+            key_2 = valid_text_input(1)
             alphabet = key_alphabet(key_2)
 
         case "3":
-            msg = input("Enter your message: ")
+            msg = valid_text_input()
 
         case "4":
             print("\nMessage:", msg)
-            print("Key1:", key_1)
-            print("Key2:", key_2)
+            print("Key 1:", key_1)
+            print("Key 2:", key_2)
             print("Alphabet:", alphabet)
 
         case "5":
@@ -46,14 +46,20 @@ while 1:
             msg = ""
 
         case "6":
-            sign = 1
-            new_msg = caesar_cipher(msg, key_1, sign, alphabet)
-            print("\nEncrypted message: ", new_msg)
+            if not (msg and key_1):
+                print("Missing key or text message")
+            else:
+                sign = 1
+                new_msg = caesar_cipher(msg, key_1, sign, alphabet)
+                print("\nEncrypted message:", new_msg)
 
         case "7":
-            sign = -1
-            new_msg = caesar_cipher(msg, key_1, sign, alphabet)
-            print("\nDecrypted message: ", new_msg)
+            if not (msg and key_1):
+                print("Missing key or text message")
+            else:
+                sign = -1
+                new_msg = caesar_cipher(msg, key_1, sign, alphabet)
+                print("\nDecrypted message:", new_msg)
 
         case "8":
             exit(1)
