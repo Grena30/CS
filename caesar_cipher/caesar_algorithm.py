@@ -29,6 +29,7 @@ def valid_key_input():
             key = int(key)
         except:
             print("Input an integer key between 1 and 25")
+            continue
 
         if key < 1 or key > 25:
             print("Input an integer key between 1 and 25")
