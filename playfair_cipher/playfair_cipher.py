@@ -20,8 +20,8 @@ def playfairCipher(text, key, sign):
 
             # If the letters are on the same row
             # we shift them down one position
-            new_text += key[(pos_1[0] + sign) % 5][pos_1[1]]
-            new_text += key[(pos_2[0] + sign) % 5][pos_2[1]]
+            new_text += key[(pos_1[0] + sign) % columns][pos_1[1]]
+            new_text += key[(pos_2[0] + sign) % columns][pos_2[1]]
 
         else:
 
@@ -34,7 +34,7 @@ def playfairCipher(text, key, sign):
 
 
 def letterPosition(char, matrix):
-    for i in range(5):
+    for i in range(columns):
         for j in range(5):
             if matrix[i][j] == char:
                 return [i, j]

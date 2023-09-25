@@ -1,7 +1,12 @@
 import random
 
 chars = ['Z', 'X', 'Q']
-basicAlphabet = (list(map(chr, range(ord('A'), ord('Z') + 1))))
+englishAlphabet = (list(map(chr, range(ord('A'), ord('Z') + 1))))
+romanianAlphabet = "AĂÂBCDEFGHIÎJKLMNOPQRSȘTȚUVWXYZ"
+
+basicAlphabet = romanianAlphabet
+
+columns = len(basicAlphabet) // 5
 
 
 def textInput():
@@ -41,7 +46,7 @@ def letterSeparation(msg):
 
     if len(msg) % 2 != 0:
         letter = random.choice(chars)
-        msg = msg + letter
+        msg += letter
 
     msg = msg.upper()
 
@@ -104,11 +109,10 @@ def keyToMatrix(key):
     alphabet = uniqueAlphabet(key)
     matrix = []
 
-    for i in range(5):
+    for i in range(columns):
         matrix.append([])
 
         for j in range(5):
             matrix[i].append(alphabet[5 * i + j])
 
     return matrix
-
