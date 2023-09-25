@@ -14,14 +14,18 @@ def main():
         if choice == 1:
             msg = textInput()
             key = keyInput()
-            print("\nMatrix: ", keyToMatrix(key))
-            print("Encrypted message:", playfairEncryption(msg, key), "\n")
+            print("\nMatrix: ")
+            for i in keyToMatrix(key):
+                print(i)
+            print("\nEncrypted message:", playfairEncryption(msg, key), "\n")
 
         elif choice == 2:
             msg = textInput()
             key = keyInput()
-            print("Matrix: ", keyToMatrix(key))
-            print("Decrypted message:", playfairDecryption(msg, key), "\n")
+            print("\nMatrix: ")
+            for i in keyToMatrix(key):
+                print(i)
+            print("\nDecrypted message:", playfairDecryption(msg, key), "\n")
 
         elif choice == 3:
             break
