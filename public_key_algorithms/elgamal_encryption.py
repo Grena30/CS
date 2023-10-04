@@ -7,7 +7,7 @@ def compute_beta_generator(prime_number, generator, private_key):
     return beta_a
 
 
-def encrypt(msg, generator, beta_generator, prime_number):
+def encrypt_elgamal(msg, generator, beta_generator, prime_number):
     k = random.randint(2, prime_number - 2)
     r = pow(generator, k, prime_number)
 
@@ -20,7 +20,7 @@ def encrypt(msg, generator, beta_generator, prime_number):
     return r, new_msg
 
 
-def decrypt(t, r, private_key, prime_number):
+def decrypt_elgamal(t, r, private_key, prime_number):
 
     r = pow(r, -private_key, prime_number)
     new_msg = []
