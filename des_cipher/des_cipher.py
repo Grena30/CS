@@ -58,6 +58,6 @@ def compute_nth_r(selection_blocks, left_blocks):
 
         r_blocks.append(format(xor_block, "04b"))
 
-    #r_blocks = map(str, r_blocks)
+    # r_blocks = map(str, r_blocks)
 
     return r_blocks
